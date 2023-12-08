@@ -7,7 +7,7 @@ import 'package:ecom_app/controllers/products_controller.dart';
 import 'package:ecom_app/controllers/register_controller.dart';
 import 'package:flutter/widgets.dart';
 
-const initialPage = '/login';
+const initialPage = '/home';
 
 /// Routes
 Map<String, Widget Function(BuildContext)> routes = {
