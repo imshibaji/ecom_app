@@ -1,4 +1,4 @@
-import 'package:ecom_app/views/home_view.dart';
+import 'package:ecom_app/views/page_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeCotroller extends StatelessWidget {
@@ -6,7 +6,7 @@ class HomeCotroller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeView(
+    return AppPageView(
       title: 'Home Page',
     );
   }

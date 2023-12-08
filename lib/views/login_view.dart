@@ -1,3 +1,4 @@
+import 'package:ecom_app/utils/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,6 +16,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
+    ToastContext().init(context);
   }
 
   @override
@@ -24,11 +26,14 @@ class _LoginViewState extends State<LoginView> {
 
   onLogin() {
     if (username == 'admin' && password == 'admin') {
+      Toast.show('Login Success');
       Navigator.pushReplacementNamed(
         context,
         '/home',
       );
+      return true;
     }
+    Toast.show('Login Failed', gravity: Toast.bottom);
   }
 
   @override
