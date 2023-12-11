@@ -1,8 +1,23 @@
+import 'package:ecom_app/models/cart_model.dart';
+import 'package:ecom_app/models/counter_model.dart';
 import 'package:ecom_app/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CounterModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CartModel(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:ecom_app/views/page_view.dart';
+import 'package:ecom_app/views/products_view.dart';
 import 'package:flutter/material.dart';
 
 class ProductsCotroller extends StatelessWidget {
@@ -6,8 +6,6 @@ class ProductsCotroller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppPageView(
-      title: 'Products Page',
-    );
+    return const ProductsView();
   }
 }
