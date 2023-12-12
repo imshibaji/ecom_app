@@ -1,4 +1,5 @@
 // ignore_for_file: must_be_immutable
+import 'package:ecom_app/utils/header.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
@@ -39,11 +40,8 @@ class _AppPageViewState extends State<AppPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
-        centerTitle: true,
-      ),
+      drawer: const HeaderWidget(),
+      appBar: appBar(context, title: title),
       body: Column(children: [
         carousel(context),
         SizedBox(
@@ -85,7 +83,7 @@ class _AppPageViewState extends State<AppPageView> {
               anchor: 0.0,
               velocityFactor: 0.5,
               onIndexChanged: (index) {
-                print(index);
+                // print(index);
               },
               scrollBehavior: ScrollConfiguration.of(context).copyWith(
                 dragDevices: {

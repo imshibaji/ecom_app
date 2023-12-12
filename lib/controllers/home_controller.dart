@@ -9,5 +9,7 @@ class HomeCotroller extends StatelessWidget {
     return AppPageView(
       title: 'Home Page',
     );
+    // return const SimpleView();
+    // return const Simple2View();
   }
 }
