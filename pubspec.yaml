@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.9
   infinite_carousel: ^1.0.3
   provider: ^6.1.1
+  http: ^1.1.2
 
 dev_dependencies:
   flutter_test:

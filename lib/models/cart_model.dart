@@ -9,7 +9,7 @@ class CartModel extends ChangeNotifier {
   int get count => orders.length;
 
   double get totalPrice =>
-      orders.fold(0.00, (total, current) => total + current.price);
+      orders.fold(0.00, (total, current) => total + current.price!);
 
   void addProduct(Product product) {
     orders.add(product);

@@ -5,19 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProductsView extends StatelessWidget {
-  const ProductsView({super.key});
-  List<Product> get products => [
-        Product('Product 1', 'https://picsum.photos/200', 'Product Description',
-            10, 100.0),
-        Product('Product 2', 'https://picsum.photos/201', 'Product Description',
-            20, 200.0),
-        Product('Product 3', 'https://picsum.photos/202', 'Product Description',
-            30, 300.0),
-        Product('Product 4', 'https://picsum.photos/203', 'Product Description',
-            40, 400.0),
-        Product('Product 5', 'https://picsum.photos/204', 'Product Description',
-            50, 500.0),
-      ];
+  final List<Product> products;
+  const ProductsView({super.key, required this.products});
+
+  // List<Product> get products => [
+  //       Product(
+  //         title: 'Product 1',
+  //         thumbnail: 'https://picsum.photos/200',
+  //         description: 'Product Description',
+  //         stock: 10,
+  //         price: 100.0,
+  //       ),
+  //       Product(
+  //         title: 'Product 2',
+  //         thumbnail: 'https://picsum.photos/201',
+  //         description: 'Product Description',
+  //         stock: 10,
+  //         price: 200.0,
+  //       )
+  //     ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +33,10 @@ class ProductsView extends StatelessWidget {
       body: ListView.builder(
         itemCount: products.length,
         itemBuilder: (_, index) => ListTile(
-            title: Text('Product ${products[index].name}'),
+            title: Text('Product ${products[index].title}'),
             subtitle: Text('Description: ${products[index].description}'),
             trailing: Text('Price: ${products[index].price}'),
-            leading: Image.network(products[index].image),
+            leading: Image.network(products[index].thumbnail!),
             enabled: true,
             onTap: () {
               Provider.of<CartModel>(context, listen: false).addProduct(
